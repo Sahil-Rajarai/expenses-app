@@ -10,6 +10,13 @@ target 'Authentication App' do
   pod 'lottie-ios'
   pod 'Alamofire'
   pod 'PopupDialog'
+  
+  # Add the pods for the Firebase products you want to use in your app
+  # For example, to use Firebase Authentication and Cloud Firestore
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'GoogleSignIn'
+  pod 'Charts'
 
   target 'Authentication AppTests' do
     inherit! :search_paths

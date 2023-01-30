@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C170F1D28E603AD000385BC /* HomepageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C170F1C28E603AD000385BC /* HomepageView.swift */; };
+		1C54A96927FC64D000713A3C /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C54A96827FC64D000713A3C /* Expense.swift */; };
+		1C54A96E27FC6A3400713A3C /* ExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C54A96D27FC6A3400713A3C /* ExpenseViewModel.swift */; };
+		1C54A97127FD983F00713A3C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C54A97027FD983F00713A3C /* ContentView.swift */; };
+		1C96AB5727FA424E00482C37 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C96AB5627FA424E00482C37 /* HomepageViewController.swift */; };
+		1CA860BE27F3327000307C00 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CA860BD27F3327000307C00 /* GoogleService-Info.plist */; };
+		1CC6B60828DCD14C008B5788 /* MyChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC6B60728DCD14C008B5788 /* MyChartViewController.swift */; };
+		1CC6B60A28DCD17F008B5788 /* MyPieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC6B60928DCD17F008B5788 /* MyPieChartViewController.swift */; };
 		5073E712FE1E08F100F5CB30 /* AuthAppNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5073E711FE1E08F100F5CB30 /* AuthAppNetworkService.swift */; };
 		5073E714FE1E08F100F5CB30 /* URLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5073E713FE1E08F100F5CB30 /* URLHelper.swift */; };
 		5073E716FE1E08F100F5CB30 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5073E715FE1E08F100F5CB30 /* Extension.swift */; };
@@ -52,6 +60,14 @@
 
 /* Begin PBXFileReference section */
 		00C152DBD5F4F608E76FBDA1 /* Pods-Authentication App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Authentication App.release.xcconfig"; path = "Target Support Files/Pods-Authentication App/Pods-Authentication App.release.xcconfig"; sourceTree = "<group>"; };
+		1C170F1C28E603AD000385BC /* HomepageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageView.swift; sourceTree = "<group>"; };
+		1C54A96827FC64D000713A3C /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		1C54A96D27FC6A3400713A3C /* ExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewModel.swift; sourceTree = "<group>"; };
+		1C54A97027FD983F00713A3C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1C96AB5627FA424E00482C37 /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
+		1CA860BD27F3327000307C00 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1CC6B60728DCD14C008B5788 /* MyChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChartViewController.swift; sourceTree = "<group>"; };
+		1CC6B60928DCD17F008B5788 /* MyPieChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPieChartViewController.swift; sourceTree = "<group>"; };
 		37E78EE34F35D962CBEB909D /* Pods_Authentication_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Authentication_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5073E711FE1E08F100F5CB30 /* AuthAppNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAppNetworkService.swift; sourceTree = "<group>"; };
 		5073E713FE1E08F100F5CB30 /* URLHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLHelper.swift; sourceTree = "<group>"; };
@@ -123,6 +139,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C54A96527FC5F3700713A3C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1C54A96827FC64D000713A3C /* Expense.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1C54A96C27FC68D900713A3C /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				1C54A96D27FC6A3400713A3C /* ExpenseViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		1C54A96F27FD982700713A3C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1C54A97027FD983F00713A3C /* ContentView.swift */,
+				1C170F1C28E603AD000385BC /* HomepageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		5073E70FFE1E08F100F5CB30 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +195,9 @@
 				509D0093247B1A6000A9915A /* SignUpViewController.swift */,
 				509D0095247B1ACF00A9915A /* UpdateProfileViewController.swift */,
 				5073E717FE1E08F100F5CB30 /* OTPViewController.swift */,
+				1C96AB5627FA424E00482C37 /* HomepageViewController.swift */,
+				1CC6B60728DCD14C008B5788 /* MyChartViewController.swift */,
+				1CC6B60928DCD17F008B5788 /* MyPieChartViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -201,6 +245,10 @@
 		50C22FB7FE1E39C90021BE14 /* Authentication App */ = {
 			isa = PBXGroup;
 			children = (
+				1C54A96F27FD982700713A3C /* Views */,
+				1C54A96C27FC68D900713A3C /* View Models */,
+				1CA860BD27F3327000307C00 /* GoogleService-Info.plist */,
+				1C54A96527FC5F3700713A3C /* Models */,
 				5073E70FFE1E08F100F5CB30 /* Network */,
 				509D008C247A369000A9915A /* UICustomization */,
 				509D00872479F15200A9915A /* Utils */,
@@ -369,6 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50C22FC8FE1E39CC0021BE14 /* LaunchScreen.storyboard in Resources */,
+				1CA860BE27F3327000307C00 /* GoogleService-Info.plist in Resources */,
 				50C22FC5FE1E39CC0021BE14 /* Assets.xcassets in Resources */,
 				50C22FC0FE1E39C90021BE14 /* Main.storyboard in Resources */,
 			);
@@ -499,21 +548,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				5073E716FE1E08F100F5CB30 /* Extension.swift in Sources */,
+				1C54A96E27FC6A3400713A3C /* ExpenseViewModel.swift in Sources */,
 				509D0094247B1A6000A9915A /* SignUpViewController.swift in Sources */,
 				509D008B2479F46A00A9915A /* SignInViewController.swift in Sources */,
 				50C22FBDFE1E39C90021BE14 /* ViewController.swift in Sources */,
+				1C96AB5727FA424E00482C37 /* HomepageViewController.swift in Sources */,
+				1C54A97127FD983F00713A3C /* ContentView.swift in Sources */,
 				5073E718FE1E08F100F5CB30 /* OTPViewController.swift in Sources */,
+				1C54A96927FC64D000713A3C /* Expense.swift in Sources */,
 				509D0092247B1A0500A9915A /* UpdatePasswordViewController.swift in Sources */,
+				1CC6B60A28DCD17F008B5788 /* MyPieChartViewController.swift in Sources */,
 				509D00862479EC6400A9915A /* EntryViewController.swift in Sources */,
 				50C22FB9FE1E39C90021BE14 /* AppDelegate.swift in Sources */,
 				50C22FBBFE1E39C90021BE14 /* SceneDelegate.swift in Sources */,
 				5073E714FE1E08F100F5CB30 /* URLHelper.swift in Sources */,
+				1CC6B60828DCD14C008B5788 /* MyChartViewController.swift in Sources */,
 				509D0090247B196200A9915A /* ForgotPasswordViewController.swift in Sources */,
 				50C22FC3FE1E39C90021BE14 /* Authentication_App.xcdatamodeld in Sources */,
 				509D0096247B1ACF00A9915A /* UpdateProfileViewController.swift in Sources */,
 				5073E712FE1E08F100F5CB30 /* AuthAppNetworkService.swift in Sources */,
 				509D00892479F17900A9915A /* Constants.swift in Sources */,
 				509D008E247A36D200A9915A /* Buttons.swift in Sources */,
+				1C170F1D28E603AD000385BC /* HomepageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,7 +744,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z6TSH57GCP;
+				DEVELOPMENT_TEAM = NMBYZQUJZF;
 				INFOPLIST_FILE = "Authentication App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -707,7 +763,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z6TSH57GCP;
+				DEVELOPMENT_TEAM = NMBYZQUJZF;
 				INFOPLIST_FILE = "Authentication App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

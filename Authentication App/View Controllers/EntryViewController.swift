@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class EntryViewController: UIViewController {
     
@@ -48,12 +49,13 @@ extension EntryViewController {
     
     @objc func signInlabelTapped(){
         
-        
         let signinVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: constant.signinID) as! SignInViewController
-        
+
         self.present(signinVC, animated: true, completion: nil)
         
-        
+//        let hostingController = UIHostingController(rootView: ContentView())
+//        self.present(hostingController, animated: true, completion: nil)
+
     }
     
     

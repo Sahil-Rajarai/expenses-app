@@ -8,6 +8,7 @@
 
 import UIKit
 import CommonCrypto
+import Firebase
 
 class SignInViewController: UIViewController {
     
@@ -24,10 +25,6 @@ class SignInViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,11 +71,30 @@ class SignInViewController: UIViewController {
         let reqbody = ["username":email,
                        "password":password]
         
-        self.login(reqbody: reqbody)
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+            if let error = error {
+                print(error)
+            }
+            if authResult?.user.email?.isEmpty == false {
+                let homePageCtr = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "homepage") as! HomepageViewController
+                
+                homePageCtr.textEmail = "\(authResult?.user.email))"
+                self?.present(homePageCtr, animated: true, completion: nil)
+            }
+
+        }
     }
     
     @IBAction func onCheckPress(_ sender: Any) {
         checkRememberMe()
+        
+    }
+    
+    @IBAction func onRegister(_ sender: Any) {
+        print("register")
+        let signInCtr = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "register") as! SignUpViewController
+        
+        self.present(signInCtr, animated: true, completion: nil)
         
     }
     
@@ -128,7 +144,7 @@ extension SignInViewController {
         signinButton.layer.cornerRadius = signinButton.frame.height
          / 2
         
-        fbSigninButton.layer.cornerRadius = fbSigninButton.frame.height
+//        fbSigninButton.layer.cornerRadius = fbSigninButton.frame.height
         / 2
         
     }
@@ -138,53 +154,53 @@ extension SignInViewController {
     
     func login(reqbody:[String:String]){
         
-        AuthappNetworkService.login(reqbody, resultCallback: {
-            res in
-            
-            print("OOra")
-            print(res! as Any)
-            if let status:Dictionary<String,AnyObject> = res!{
-                print(status)
-                print("here")
-                print(status["isSuccessful"]!)
-                //LMLoading.hide()
-                switch status["isSuccessful"] as! Int {
-                    case 1:
-                        print("natha oora")
-                    
-                        // Open app home page
-                        //self.loadingV(is_loading: false)
-                        self.present(openViewController(_storyboard:"Main",idName: Constants.updateID(), vc: UpdateProfileViewController()), animated: true, completion: nil)
-                    
-                    case 0:
-                        //self.loadingV(is_loading: false)
-                        print("Nope")
-                    showMessageDialog("Error", message: "Email or Password incorrect", image: nil, axis: .horizontal, viewController: self, handler: {
-                        
-                        // Clear password text field
-                        self.passwordTextField.text = ""
-                        
-                    })
-                        
-                    default:
-                        print()
-                    }
-                }
-            
-            }, errorCallback: { (err) in
-                
-                if (err.containsIgnoringCase(find: "serialize") || err.containsIgnoringCase(find: "JSON")){
-                    DispatchQueue.main.async {
-                       // self.loadingV(is_loading: false)
-                        //self.delegate?.peachPay(self, didFailPaymentWithResult: ["error" : err as AnyObject])
-                    }
-                }else{
-                    //self.loadingV(is_loading: false)
-                    showMessageDialog("Error", message: err, image: nil, axis: .horizontal, viewController: self, handler: {
-                        
-                    })
-                }
-                print(err)
-            })
+//        AuthappNetworkService.login(reqbody, resultCallback: {
+//            res in
+//
+//            print("OOra")
+//            print(res! as Any)
+//            if let status:Dictionary<String,AnyObject> = res!{
+//                print(status)
+//                print("here")
+//                print(status["isSuccessful"]!)
+//                //LMLoading.hide()
+//                switch status["isSuccessful"] as! Int {
+//                    case 1:
+//                        print("natha oora")
+//
+//                        // Open app home page
+//                        //self.loadingV(is_loading: false)
+//                        self.present(openViewController(_storyboard:"Main",idName: Constants.updateID(), vc: UpdateProfileViewController()), animated: true, completion: nil)
+//
+//                    case 0:
+//                        //self.loadingV(is_loading: false)
+//                        print("Nope")
+//                    showMessageDialog("Error", message: "Email or Password incorrect", image: nil, axis: .horizontal, viewController: self, handler: {
+//
+//                        // Clear password text field
+//                        self.passwordTextField.text = ""
+//
+//                    })
+//
+//                    default:
+//                        print()
+//                    }
+//                }
+//
+//            }, errorCallback: { (err) in
+//
+//                if (err.containsIgnoringCase(find: "serialize") || err.containsIgnoringCase(find: "JSON")){
+//                    DispatchQueue.main.async {
+//                       // self.loadingV(is_loading: false)
+//                        //self.delegate?.peachPay(self, didFailPaymentWithResult: ["error" : err as AnyObject])
+//                    }
+//                }else{
+//                    //self.loadingV(is_loading: false)
+//                    showMessageDialog("Error", message: err, image: nil, axis: .horizontal, viewController: self, handler: {
+//
+//                    })
+//                }
+//                print(err)
+//            })
     }
 }
